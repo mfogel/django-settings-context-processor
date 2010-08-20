@@ -17,6 +17,7 @@ Similiar functionality:
 """
 
 from django.conf import settings as django_settings
+from django.core.exceptions import ImproperlyConfigured
 
 def settings(request):
     """
@@ -28,6 +29,7 @@ def settings(request):
         try:
             new_settings[attr] = getattr(django_settings, attr)
         except AttributeError:
-            pass # TODO: log an error?
+            m = "TEMPLATE_VISIBLE_SETTINGS: '{0}' does not exist".format(attr)
+            raise ImproperlyConfigured(m);
     return new_settings
 
