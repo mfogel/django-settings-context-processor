@@ -1,18 +1,18 @@
-
 ---------- django-settings-context-processor ----------
 -------------------------------------------------------
 
 
 What does it do?
 ---------------
-Makes specified django settings visible in template rendering context.
+Makes specified django settings visible in the template rendering context.
 
 
 How does it do it?
 ------------------
-It takes the setting variable TEMPLATE_VISIBLE_SETTINGS, which should
-be an iterable of strings, and looks for a settings of that name.  If it
-finds one, it places it in the template rendering context.
+django-settings-context-processor takes the settings variable
+TEMPLATE_VISIBLE_SETTINGS, which should be an iterable of strings,
+and looks for a settings of the name of each iterable.  The name-value
+pair of this setting is then added to the template rendering context.
 
 
 Can I see an example?
@@ -28,13 +28,13 @@ settings.py:
     )
 
     TEMPLATE_CONTEXT_PROCESSORS = (
-        # the next 5 are the django 1.2.1 default context processors
+        # the first 5 here are the django 1.2.1 default context processors
         'django.contrib.auth.context_processors.auth',
         'django.core.context_processors.debug',
         'django.core.context_processors.i18n',
         'django.core.context_processors.media',
         'django.contrib.messages.context_processors.messages',
-        ...... # others?  project-specific
+        ......
         'settings_context_processor.context_processors.settings',
     )
 
