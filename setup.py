@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name='django-settings-context-processor',
-    version='0.1',
+    version='0.2',
     description='Makes specified django settings visible in template rendering context.',
     author='Mike Fogel',
     author_email='mike@fogel.ca',
