@@ -8,7 +8,7 @@ setup(
     author='Mike Fogel',
     author_email='mike@fogel.ca',
     url='http://github.com/carbonXT/django-settings-context-processor',
-    packages=['settings-context-processor'],
+    packages=['settings_context_processor'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
