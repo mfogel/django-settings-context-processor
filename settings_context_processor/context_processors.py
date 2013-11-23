@@ -25,7 +25,7 @@ def settings(request):
     the request context.
     """
     new_settings = {}
-    for attr in django_settings.TEMPLATE_VISIBLE_SETTINGS:
+    for attr in getattr(django_settings, "TEMPLATE_VISIBLE_SETTINGS", ()):
         try:
             new_settings[attr] = getattr(django_settings, attr)
         except AttributeError:
